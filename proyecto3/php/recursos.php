@@ -47,6 +47,15 @@
 		$recursos = mysqli_query($conexion, $disponible);
 		$recursos1 = mysqli_query($conexion, $ocupado);
 
+		/*$dia= date('Y-m-d H:i:s');
+		$inicioreserva="UPDATE tbl_reserva SET 'ocupado' WHERE res_fechainicio<'$hoy' AND res_fechafinal>'$hoy' AND res_finalizada='reservado'";
+		mysqli_query($conexion, $sql_iniciar_reserva);
+		$finalreserva="UPDATE tbl_reserva  WHERE res_fechafinal<'$hoy' AND res_finalizada='ocupado'";
+		mysqli_query($conexion, $sql_finalizar_reserva);
+		$hora= date('H');
+		$horafinreerva = $hora + 1; 
+		$fecha = date('d-m-Y');*/
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,6 +86,24 @@
 			else{
 				return false;
 			}
+		}
+	
+	function validar(formulario){
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1;
+			var yyyy = today.getFullYear();
+			var hoy = yyyy+"-"+mm+"-"+dd; 
+			if (formulario.hora_ini.value>=formulario.hora_fi.value){
+				alert('La  hora de inicio debe ser inferior a la hora final')
+				return false;
+			}
+			if (formulario.fecha.value=="") {
+				alert('Introduce una fecha correcta')
+				return false;
+			}
+		
+			return true;
 		}
 	</script>
 </head>

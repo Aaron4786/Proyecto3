@@ -128,7 +128,7 @@
 											echo "<td>Correo: " .$usuarios['usu_correo']. "</td>";
 										echo "</tr>";
 										echo "<tr>";
-											echo "<td> Contraseña: " .$usuarios['usu_contrasena']. "</td>";
+											echo "<td> Contraseña:" .$usuarios['usu_contrasena']. "</td>";
 										echo "</tr>";
 										echo "<tr>";
 											echo "<td colspan='2'> <a href='modificarusuario.php?usu_id=".$usuarios['usu_id']."' '> MODIFICAR </a></td>";

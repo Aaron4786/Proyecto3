@@ -24,25 +24,36 @@
 	//session_start();
 	$mysqli = new mysqli("localhost", "root", "", "bd_proyecto2");
 	$acentos = mysqli_query($mysqli, "SET NAMES 'utf8'");
-	?>
 
-        <h2>Nuevo Recurso</h2>
+    $tipo= "SELECT * FROM tbl_tiporecurso";
+    $tipos=mysqli_query($mysqli, $tipo);
+	?>
+ <h2>Nuevo recurso</h2>
       <div>
 
   <form  method='get' action="crearrecurso.proc.php" onsubmit='validar();'>
-
+<?php
+        if (mysqli_num_rows($tipos)>0){
+            ?>
+            Tipo recurso:<br/>
+            <?php
+            while ($tipo  =   mysqli_fetch_array($tipos)) {
+                if ($tipo['tr_id']==1){
+                    echo "<input type='radio' name='tipo' value='" .$tipo['tr_id']. "' checked> " .$tipo['tr_nombre']. "<br/>";
+                } else {
+                echo "<input type='radio' name='tipo' value='" .$tipo['tr_id']. "'> " .$tipo['tr_nombre']. "<br/>";
+            }
+            }
+        } 
+            ?>
         	<br/>
         	Nombre: 
             <br/>
-        	<textarea cols="30" rows="2" name="nickname" maxlength="30"></textarea>
+        	<textarea cols="30" rows="2" name="nombre" maxlength="30"></textarea>
         	<br/>
-            Foto: 
-            <br/>
-            <textarea cols="30" rows="2" name="nombre" maxlength="15"></textarea>
-            <br/>
             Descripción: 
             <br/>
-            <textarea cols="40" rows="3" name="apellido" maxlength="200"></textarea>
+            <textarea cols="40" rows="3" name="descripcion" maxlength="200"></textarea>
             <br/>
         	<input type="submit" name="enviar" value="Enviar">
         	<div class="invisible">

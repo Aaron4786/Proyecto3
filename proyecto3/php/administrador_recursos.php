@@ -167,6 +167,9 @@
 											echo "<td>Estado: " .$recurso['rec_estado']. "</td>";
 										echo "</tr>";
 										echo "<tr>";
+											echo "<td colspan='2'> <a href='modificarrecurso.php?rec_id=".$recurso['rec_id']."' '> MODIFICAR </a></td>";
+										echo "</tr>"; 
+										echo "<tr>";
 											echo "<td colspan='2'> <a href='bajarecurso.proc.php?rec_id=".$recurso['rec_id']."' onclick='return baja();'> DAR DE BAJA </a></td>";
 										echo "</tr>"; 
 											
@@ -206,6 +209,9 @@
 										echo "<tr>";
 											echo "<td>Estado: " .$recurso1['rec_estado']. "</td>";
 										echo "</tr>";
+										echo "<tr>";
+											echo "<td colspan='2'> <a href='modificarrecurso.php?rec_id=".$recurso1['rec_id']."' '> MODIFICAR </a></td>";
+										echo "</tr>"; 
 										echo "<tr>";
 											echo "<td colspan='2'> <a href='bajarecurso.proc.php?rec_id=".$recurso1['rec_id']."' onclick='return baja();'> DAR DE BAJA </a></td>";
 										echo "</tr>"; 
@@ -257,6 +263,9 @@
 											echo "<td colspan='2'>Comentario: " .$recurso2['inc_comentario']. "</td>";
 											echo "</tr>";
 										}
+										echo "<tr>";
+											echo "<td colspan='2'> <a href='modificarrecurso.php?rec_id=".$recurso2['rec_id']."' '> MODIFICAR </a></td>";
+										echo "</tr>"; 
 										echo "<tr>";
 											echo "<td colspan='2'> <a href='bajarecurso.proc.php?rec_id=".$recurso2['rec_id']."' onclick='return baja();'> DAR DE BAJA </a></td>";
 										echo "</tr>"; 
